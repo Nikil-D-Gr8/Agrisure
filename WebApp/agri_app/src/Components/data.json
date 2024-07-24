@@ -1,0 +1,47 @@
+{
+    "2024-07-24T08:00:00Z": {
+        "sludge_level": "50 cm",
+        "pressure": "1.2 atm",
+        "moisture": "40%",
+        "CO2_level": "400 ppm",
+        "temperature": "35°C",
+        "humidity": "60%",
+        "methane_level_in_ppm": "700 ppm"
+    },
+    "2024-07-24T09:00:00Z": {
+        "sludge_level": "52 cm",
+        "pressure": "1.3 atm",
+        "moisture": "42%",
+        "CO2_level": "410 ppm",
+        "temperature": "36°C",
+        "humidity": "62%",
+        "methane_level_in_ppm": "710 ppm"
+    },
+    "2024-07-24T10:00:00Z": {
+        "sludge_level": "55 cm",
+        "pressure": "1.4 atm",
+        "moisture": "45%",
+        "CO2_level": "420 ppm",
+        "temperature": "37°C",
+        "humidity": "65%",
+        "methane_level_in_ppm": "720 ppm"
+    },
+    "2024-07-24T11:00:00Z": {
+        "sludge_level": "57 cm",
+        "pressure": "1.5 atm",
+        "moisture": "47%",
+        "CO2_level": "430 ppm",
+        "temperature": "38°C",
+        "humidity": "67%",
+        "methane_level_in_ppm": "730 ppm"
+    },
+    "2024-07-24T12:00:00Z": {
+        "sludge_level": "60 cm",
+        "pressure": "1.6 atm",
+        "moisture": "50%",
+        "CO2_level": "440 ppm",
+        "temperature": "39°C",
+        "humidity": "70%",
+        "methane_level_in_ppm": "740 ppm"
+    }
+}
