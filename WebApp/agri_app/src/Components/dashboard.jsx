@@ -16,6 +16,9 @@ import {
 } from 'chart.js';
 import dataJSON from './data.json'; // Import your JSON data
 import Navbar from './Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus,faRobot } from '@fortawesome/free-solid-svg-icons';
+
 
 ChartJS.register(
   CategoryScale,
@@ -117,7 +120,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-700 via-green-700 to-blue-800 text-white p-8">
-      <div className=" mt-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="mt-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-lg border border-white/20">
           <h2 className="text-2xl mb-4">Sludge Level</h2>
           <Line data={createChartData('Sludge Level', 'sludgeLevel')} options={options} />
@@ -143,8 +146,15 @@ const Dashboard = () => {
           <Radar data={createChartData('Humidity', 'humidity')} options={options} />
         </div>
       </div>
+      <button
+        className=" animate-floatUp fixed bottom-8 right-8 bg-green-500 animate- text-white p-4 rounded-full shadow-xl hover:scale-125 transition duration-300 ease-in-out"
+        onClick={() => window.open('https://huggingface.co/spaces/Livewires/BioWhizz')}
+      >
+        <FontAwesomeIcon icon={faRobot} className="animate-pulse w-10 h-10 " />
+      </button>
     </div>
   );
 };
 
 export default Dashboard;
+
