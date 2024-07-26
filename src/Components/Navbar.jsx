@@ -40,7 +40,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-white shadow-md py-4 fixed top-0 w-full z-50">
+    <nav className="bg-gradient-to-r from-blue-300 via-blue-700 to-blue-800 shadow-md py-4 fixed top-0 w-full z-50">
       <div className="container mx-auto flex items-center justify-between">
         {/* Image Frame */}
         <div className="flex items-center pl-5">
@@ -65,7 +65,7 @@ function Navbar() {
         <div className="relative">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center p-2 rounded-full transition duration-300 ease-in-out"
+            className="flex items-center p-2 text-white rounded-full transition duration-300 ease-in-out"
           >
             {isMenuOpen ? (
               <XIcon className="w-10 h-10 text-black-800" />
