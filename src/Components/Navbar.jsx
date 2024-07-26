@@ -72,13 +72,16 @@ function Navbar() {
           >
             <ul>
               <li>
-                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+                {/* <a href="#home" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a> */}
+                <p>Profile</p>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Settings</a>
+                <p>Settings</p>
+                {/* <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Settings</a> */}
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
+                <p>Logout</p>
+                {/* <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a> */}
               </li>
             </ul>
           </div>
