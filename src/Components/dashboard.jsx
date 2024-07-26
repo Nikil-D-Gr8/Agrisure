@@ -293,9 +293,10 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-700 via-green-700 to-blue-800 text-white p-8">
-      <div className="mt-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <h1 className=" mt-28 text-6xl font-semibold text-zinc-100 text-center">Dashboard </h1>
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-lg border border-white/20">
-          <h2 className="text-2xl mb-4">Sludge Level</h2>
+          <h2 className="text-2xl mb-11">Sludge Level</h2>
           <Line data={createChartData('Sludge Level', 'sludgeLevel')} options={options} />
         </div>
         <div className="bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-lg border border-white/20">
