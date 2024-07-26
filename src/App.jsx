@@ -1,5 +1,4 @@
 import './App.css'
-import dashboard from './Components/dashboard'
 import Signin from './Components/login'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import main from './Components/main'
