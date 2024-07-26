@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+// import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCrown } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../Config/firebaseConfig';
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false); // New state for the popup
 
   const navigate = useNavigate();
@@ -62,37 +62,7 @@ function Navbar() {
         </button>
 
         {/* Menu Bar */}
-        <div className="relative">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center p-2 text-white rounded-full transition duration-300 ease-in-out"
-          >
-            {isMenuOpen ? (
-              <XIcon className="w-10 h-10 text-black-800" />
-            ) : (
-              <MenuIcon className="w-10 h-10 text-black-800" />
-            )}
-          </button>
-
-          {/* Dropdown Menu */}
-          <div
-            className={`absolute top-12 right-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform ${
-              isMenuOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-            }`}
-          >
-            <ul>
-              <li>
-                <p>Profile</p>
-              </li>
-              <li>
-                <p>Settings</p>
-              </li>
-              <li>
-                <p>Logout</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+        
       </div>
 
       {/* Popup */}
