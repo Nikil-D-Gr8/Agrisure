@@ -1,55 +1,55 @@
-import streamlit as st
-from chat import langchainning
-from checker import checking, health_keywords
+import gradio as gr
+import os
+from langchain_community.llms import HuggingFaceEndpoint
+from langchain.chains import LLMChain
+from langchain_core.prompts import PromptTemplate
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Setting the API
+model_Api = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+repo_id = "mistralai/Mistral-7B-Instruct-v0.3"
+
+def QueryBuilding():
+    Query_template = """Consider yourself as a personalized helper to let farmers know how to handle biogas plant, for the user {query},
+                    
+                    Answer: provide guidance and support to the user in a more detailed, simple and straightforward manner."""
+    return Query_template
+
+def PromptEngineering():
+    Prompt = PromptTemplate.from_template(QueryBuilding())
+    return Prompt
+
+def LLM_building():
+    llm_model = HuggingFaceEndpoint(
+        repo_id=repo_id,
+        max_length=128,
+        token=model_Api
+    )
+    return llm_model
+
+def langchainning():
+    llm_chain = LLMChain(prompt=PromptEngineering(), llm=LLM_building())
+    return llm_chain
 
 def user_input(user):
-   
     ans = langchainning().run(user)
     return ans
 
-st.title("Gas Whizz")
-st.caption("Hello Friend, How can I help you today?")
+def chat_interface(message, history):
+    response = user_input(message)
+    return response
 
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+iface = gr.ChatInterface(
+    fn=chat_interface,
+    title="Gas Whizz",
+    description="Hello Friend, How can I help you today?",
+    examples=["How does a biogas plant work?", "What are the benefits of biofuel?"],
+    retry_btn=None,
+    undo_btn="Delete Previous",
+    clear_btn="Clear",
+)
 
-
-
-q = st.chat_input("Type something here....")
-
-def checking(query):
-    flag = False
-    list_of_words = query.split(" ")
-    for i in list_of_words:
-        if i.lower() in health_keywords:
-            flag = True
-            break
-    return flag
-
-
-
-
-
-
-# 
-if q is not None and len(q.strip()) > 0:  
-    if checking(q):
-        st.session_state.messages.append(("user", q))
-        st.session_state.messages.append(("assistant", user_input(q)))
-
-        for role, message in st.session_state.messages:
-            if role == "user":
-                st.chat_message("user")
-                st.write(message)
-            elif role == "assistant":
-                st.chat_message("assistant")
-                st.write(message)
-    else:
-
-        st.write("I'm a Biogas plant helper chatbot. Please ask me about Biogas or Biofuel only.")
-        
-
-b =  st.button("Clear Chat")
-if b:
-    st.session_state.messages = []
-
+if __name__ == "__main__":
+    iface.launch(share=True)
