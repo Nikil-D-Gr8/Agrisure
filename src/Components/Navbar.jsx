@@ -100,26 +100,26 @@ function Navbar() {
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
           <div
             ref={popupRef}
-            className="bg-white p-6 rounded-lg shadow-lg w-11/12 sm:w-1/2 lg:w-1/3"
+            className="bg-slate-200 p-6 rounded-lg shadow-lg w-11/12 sm:w-1/2 lg:w-1/3"
           >
             <h2 className="text-2xl font-bold mb-4">Premium Subscription</h2>
             <p className="text-lg mb-4">Choose your plan:</p>
             <div className="space-y-4">
-              <div className="p-4 border border-gray-300 rounded-lg bg-gray-50">
+              <div className="p-4 border border-gray-300 rounded-lg bg-green-200">
                 <h3 className="text-xl font-semibold mb-2">Free Plan</h3>
                 <p className="text-gray-700 mb-2">1 Year Free Plan</p>
-                <p className="text-green-600 font-bold text-lg">Free</p>
+                <p className="text-green-600 font-bold text-lg">0/-</p>
               </div>
-              <div className="p-4 border border-gray-300 rounded-lg bg-gray-50">
+              <div className="p-4 border border-gray-300 rounded-lg bg-yellow-300">
                 <h3 className="text-xl font-semibold mb-2">Pro Plan</h3>
                 <p className="text-gray-700 mb-2">1500 for Renewal</p>
-                <p className="text-red-600 font-bold text-lg">1500</p>
+                <p className="text-red-600 font-bold text-lg">1500/-</p>
               </div>
             </div>
             <div className="mt-6 flex justify-end">
               <button
                 onClick={() => setIsPopupOpen(false)}
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+                className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300"
               >
                 Close
               </button>
